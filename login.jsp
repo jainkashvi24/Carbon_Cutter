@@ -27,7 +27,12 @@
     if (isValidUser) {
        response.sendRedirect("calculator.jsp");
     } else {
-        response.sendRedirect("index.html");
+   %>
+   <script>
+            alert("Invalid user ID or password");
+            window.location.href = "index.html";
+   </script>
+     <%   
     }
 %>
 
