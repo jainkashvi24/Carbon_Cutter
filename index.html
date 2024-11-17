@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carbon Emission Control</title>
+    <link rel="stylesheet" href="index1.css">
+</head>
+<body>
+    <header>
+        <img src="logo.jpg" alt="Carbon Cutters Logo" class="logo">
+        <h1>Carbon Cutters</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#solutions">Our Solutions</a></li>
+               <!-- <li><a href="#calculator">Carbon Calculator</a></li>
+                <li><a href="#carbon-challenges">Challenges</a></li>  -->
+                <li><a href="#contact">Contact</a></li>
+                
+            </ul>
+        </nav> 
+    </header> 
+
+
+
+    <div id="completionModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Challenge Completed!</h2>
+            <p id="challengeMessage"></p>
+            <button onclick="closeModal()">OK</button>
+        </div>
+    </div>  
+   
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div id="loginContainer">
+                <h1>Login</h1>
+                <form id="loginForm" action="LoginServlet" method="post">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" placeholder="Enter Username" name="username" required>
+    
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" placeholder="Enter password" name="password" required>
+    
+                    <button type="submit">Login</button>
+                </form>
+                <p>Don't have an account? <button onclick="toggleForm('signup')">Sign Up</button></p>
+            </div>
+    
+            <div id="signupContainer" style="display: none;">
+                <h1>Sign Up</h1>
+                <form id="signupForm" action="RegisterServlet" method="post">
+                    <label for="newUsername">Username:</label>
+                    <input type="text" id="newUsername" placeholder="Enter Username" name="newUsername" required>
+    
+                    <label for="newPassword">Password:</label>
+                    <input type="password" id="newPassword" placeholder="Enter password" name="newPassword" required>
+    
+                    <button type="submit" >Sign Up</button>
+                </form>
+                <p>Already have an account? <button onclick="toggleForm('login')">Login</button></p>
+            </div>
+    
+            <div id="loginMessage"></div>
+        </div>
+    </div>
+
+    <!-- Post-login choice container -->
+<div id="choiceContainer" style="display: none; text-align: center; padding: 20px;">
+    <h2>Choose The Way..</h2>
+    <button onclick="navigateTo('calculator')" class="choice-button">Go to Calculator</button>
+    <button onclick="navigateTo('challenges')" class="choice-button">Go to Challenges</button>
+    <button onclick="navigateTo('emission')" class="choice-button">Go to Carbon emission</button>
+</div>
+
+    
+    <section id="hero">
+        <h2>Reduce Your Carbon Footprint Today!</h2>
+        <p>Join us in creating a sustainable future.</p>
+        <button id="getStarted">Get Started</button>
+    </section>
+
+   
+
+    <section id="about">
+        <h2>About Us</h2>
+        <img src="about-image.jpg" alt="About Us" class="section-image">
+        <p>We are "The Carbon Cutters" students of School of Computer Science and IT (DAVV),Indore
+          <br>  Our aim is to create awareness about the carbon emission.</p>
+    </section>
+    
+   
+
+    <section id="solutions">
+        <h2>Our Solutions</h2>
+        <div class="solution">
+            <img src="offsetting.jpg" alt="Carbon Offsetting" class="solution-image">
+            <h3>Carbon Offsetting</h3>
+            <p>Carbon offsetting is a way to compensate for greenhouse gas emissions by investing in projects that reduce, avoid, or remove emissions elsewhere.</p>
+            <div class="steps">
+                <h4>Steps to Offset Carbon:</h4>
+                <ul>
+                    <li>1. Calculate your carbon footprint.</li>
+                    <li>2. Choose offsetting projects like tree planting or renewable energy.</li>
+                    <li>3. Invest in certified carbon offset programs.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="solution">
+            <img src="efficiency.jpg" alt="Energy Efficiency" class="solution-image">
+            <h3>Energy Efficiency</h3>
+            <p>Implement strategies to use energy more efficiently.</p>
+            <div class="steps">
+                <h4>Steps to Improve Energy Efficiency:</h4>
+                <ul>
+                    <li>1. Conduct an energy audit.</li>
+                    <li>2. Switch to LED lighting.</li>
+                    <li>3. Upgrade to energy-efficient appliances.</li>
+                    <li>4. Insulate homes and offices.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="solution">
+            <img src="renewable.jpg" alt="Renewable Energy" class="solution-image">
+            <h3>Renewable Energy</h3>
+            <p>Switch to renewable energy sources for a cleaner environment.</p>
+            <div class="steps">
+                <h4>Steps to Switch to Renewable Energy:</h4>
+                <ul>
+                    <li>1. Research are available on renewable energy options.</li>
+                    <li>2. Install solar panels or wind turbines.</li>
+                    <li>3. Switch to a green energy provider.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    
+
+  <!-- <section id="calculator">
+        <h1>Carbon Footprint Calculator</h1>
+        <form id="calculatorForm">
+            <label for="transport">Transport (km per week):</label>
+            <input type="number" id="transport" name="transport" required>
+    
+            <label for="electricity">Electricity (kWh per month):</label>
+            <input type="number" id="electricity" name="electricity" required>
+    
+            <label for="gas">Natural Gas (cubic meters per month):</label>
+            <input type="number" id="gas" name="gas" required>
+    
+            <label for="meat">Meat Consumption (kg per week):</label>
+            <input type="number" id="meat" name="meat" required>
+    
+            <label for="waste">Household Waste (kg per week):</label>
+            <input type="number" id="waste" name="waste" required>
+    
+            <label for="water">Water Usage (liters per day):</label>
+            <input type="number" id="water" name="water" required>
+    
+            <label for="airTravel">Air Travel (hours per year):</label>
+            <input type="number" id="airTravel" name="airTravel" required>
+    
+            <button type="button" onclick="calculateCarbon()">Calculate Carbon Footprint</button>
+        </form>
+    
+        <div id="result" class="result"></div>
+    </section>
+
+    <section id="carbon-challenges">
+        <h2>Carbon Reduction Challenges</h2>
+        <p>Score: <span id="score">0</span></p> --- Display the score here 
+        <div class="challenge">
+            <h3>Challenge 1: Walk or Bike Instead of Driving</h3>
+            <p>Try to walk or bike at least twice a week to reduce your transport emissions.</p>
+            <button onclick="completeChallenge(1)">Complete Challenge</button>
+        </div>
+        <div class="challenge">
+            <h3>Challenge 2: Reduce Meat Consumption</h3>
+            <p>Replace one meat-based meal per week with a plant-based alternative.</p>
+            <button onclick="completeChallenge(2)">Complete Challenge</button>
+        </div>
+        <div class="challenge">
+            <h3>Challenge 3: Unplug Devices</h3>
+            <p>Unplug devices when not in use to reduce standby power consumption.</p>
+            <button onclick="completeChallenge(3)">Complete Challenge</button>
+        </div>
+        <div id="rewardMessage"></div> --- Display rewards here 
+    </section>    
+
+    
+-->
+
+<section id="partners-logos">
+    <h2>Our Partners in Sustainability</h2>
+    <div class="carousel-wrapper">
+        <div class="carousel-track">
+            <img src="logo1.jpg" onclick="logo1()" alt="Organization 1 Logo">
+            <img src="logo2.jpg" onclick="logo2()" alt="Organization 2 Logo">
+            <img src="logo3.jpg" onclick="logo3()" alt="Organization 3 Logo">
+            <img src="logo4.jpg" onclick="logo4()" alt="Organization 4 Logo">
+           
+        </div>
+    </div>
+</section>
+
+    
+
+    <footer id="contact">
+        <h2>Contact Us</h2>
+        <p>Email: info@carboncontrol.org</p>
+        <p>Follow us on social media!</p>
+        <section id="feedback">
+            <h2>We Value Your Feedback</h2>
+            <form id="feedbackForm">
+                <label for="feedbackName">Name:</label>
+                <input type="text" id="feedbackName" name="feedbackName" required>
+        
+                <label for="feedbackMessage">Message:</label>
+                <textarea id="feedbackMessage" name="feedbackMessage" rows="4" required></textarea><br>
+        
+                <button type="button" onclick="saveFeedbackData()">Submit Feedback</button>
+            </form>
+            <div id="feedbackResponse"></div>
+        </section>
+        
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carbon Footprint Calculator</title>
+    <link rel="stylesheet" href="index1.css">
+</head>
+<body>
+    <section id="calculator">
+        <h1>Carbon Footprint Calculator</h1>
+        <form id="calculatorForm">
+            <label for="transport">Transport (km per week):</label>
+            <input type="number" id="transport" name="transport" required>
+    
+            <label for="electricity">Electricity (kWh per month):</label>
+            <input type="number" id="electricity" name="electricity" required>
+    
+            <label for="gas">Natural Gas (cubic meters per month):</label>
+            <input type="number" id="gas" name="gas" required>
+    
+            <label for="meat">Meat Consumption (kg per week):</label>
+            <input type="number" id="meat" name="meat" required>
+    
+            <label for="waste">Household Waste (kg per week):</label>
+            <input type="number" id="waste" name="waste" required>
+    
+            <label for="water">Water Usage (liters per day):</label>
+            <input type="number" id="water" name="water" required>
+    
+            <label for="airTravel">Air Travel (hours per year):</label>
+            <input type="number" id="airTravel" name="airTravel" required>
+    
+            <button type="button" onclick="calculateCarbon() ; saveCalculatorData()">Calculate and Save Carbon Footprint</button>
+        </form>
+    
+        <div id="result" class="result"></div>
+        <button onclick="goToemission()" class="choice-button">Go to Carbon emission</button>
+        <button onclick="goTomain()" class="choice-button">Go to Main page</button>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

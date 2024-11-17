@@ -1,0 +1,930 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f4f4f4;
+    color: #333;
+    background-color: #0db78f;
+}
+
+header {
+    background: #007B5F;
+    color: white;
+    padding: 15px 0;
+    text-align: center;
+    animation: fadeInSlide 1s ease-in-out; /* New animation */
+}
+
+.logo {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 100px; 
+    height: auto;
+    margin-top: 11px;
+    margin-left:20px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 20px;
+    animation: fadeInSlide 1s ease-in-out forwards;
+    animation-delay: 0.5s; /* Staggered delay for a nicer effect */
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #FFC107; /* Highlight effect on hover */
+}
+
+#hero {
+    background: url('hero-background.jpg') no-repeat center center/cover;
+    color: rgb(255, 255, 255);
+    padding: 80px 20px;
+    text-align: center;
+    height:600px;
+    animation: heroSlideIn 1.5s ease-out;  /* Enhanced animation for hero section */
+}
+
+#hero h2 {
+    margin-top:10%;
+    font-size: 2.5em;
+    animation: zoomIn 1s ease-in-out;
+}
+
+#hero button {
+    padding: 10px 20px;
+    background: #FFC107;
+    border: none;
+    color: #333;
+    font-size: 1.2em;
+    cursor: pointer;
+    animation: pulse 2s infinite;
+    transition: background-color 0.3s, transform 0.2s;
+    opacity: 1;
+}
+
+#hero button:hover {
+    background: #e0a800;
+    transform: scale(1.05); /* Slightly scale up on hover */
+}
+
+section {
+    padding: 40px 20px;
+    text-align: center;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+#calculator {
+    margin: 20px auto;
+    max-width: 600px;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 128, 0, 0.1);
+    animation: fadeIn 1s ease-in-out;
+    text-align: center;
+}
+
+#calculator h1 {
+    color: #2d6a4f;
+    text-align: center;
+    margin-bottom: 20px;
+    animation: slideInDown 1s ease-out;
+}
+
+#calculatorForm {
+    margin: 20px auto;
+    max-width: 400px;
+    text-align: left;
+    animation: slideIn 1s ease-out;
+}
+
+#calculatorForm label,
+#calculatorForm input {
+    opacity: 1; /* Ensure inputs and labels are visible */
+    animation: fadeInUp 1s forwards;
+}
+
+#calculatorForm label {
+    display: block;
+    margin-bottom: 5px;
+    color: #2d6a4f;
+    font-weight: bold;
+}
+
+#calculatorForm input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 20px;
+    border: 2px solid #2d6a4f;
+    border-radius: 5px;
+    box-sizing: border-box;
+    transition: border-color 0.3s, transform 0.2s;
+}
+
+#calculatorForm input:focus {
+    border-color: #38a169;
+    outline: none;
+    transform: scale(1.02);
+}
+#result ul {
+    list-style: none;
+    padding: 0;
+}
+
+#result li {
+    margin: 8px 0;
+    color: #2d6a4f;
+}
+
+
+button {
+    background-color: #38a169; /* Green button */
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    animation: bounce 1.5s infinite alternate;
+    opacity: 1;
+    animation: fadeInUp 1s 0.5s forwards;
+}
+
+button:hover {
+    background-color: #2d6a4f; /* Darker green on hover */
+    transform: translateY(-2px); /* Subtle hover effect */
+}
+
+.result {
+    width: 70%;
+    margin: 20px auto;
+    padding: 15px;
+    background: #f0fdf4;
+    border-left: 4px solid #38a169;
+    border-right: 4px solid #38a169;
+    border-radius: 5px;
+    font-size: 18px;
+    color: #2d6a4f;
+    opacity: 1;
+    animation: fadeIn 1s forwards;
+}
+
+footer {
+    background: #007B5F; /* Dark green background */
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 20px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    animation: fadeInSlide 1s ease-in-out; /* Fade-in animation */
+}
+
+footer a {
+    color: #FFC107; /* Highlight link color */
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+footer a:hover {
+    color: #e0a800; /* Slightly darker yellow on hover */
+}
+
+
+/* Animations */
+@keyframes fadeInSlide {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes heroSlideIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes zoomIn {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes bounce {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-5px);
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        margin: 20px;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+
+    form input,
+    button {
+        font-size: 14px;
+    }
+}
+/* Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+}
+
+/* Modal content */
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    max-width: 400px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    animation: fadeInUp 0.5s ease-in-out;
+}
+
+/* Close button (X) */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#loginForm label {
+    display: block;
+    margin-bottom: 4px;
+    font-weight: bold;
+    color: #2d6a4f;
+    margin-right:70%;
+}
+
+#loginForm input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 2px solid #2d6a4f;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+#loginForm button {
+    width: 100%;
+    padding: 10px;
+    background-color: #38a169;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#loginForm button:hover {
+    background-color: #2d6a4f;
+}
+
+#loginMessage {
+    margin-top: 20px;
+    text-align: center;
+    color: red;
+}
+
+#loginContainer, #signupContainer {
+    text-align: center;
+}
+
+#loginContainer button, #signupContainer button {
+    background-color: #38a169;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+#loginContainer button:hover, #signupContainer button:hover {
+    background-color: #2d6a4f;
+}
+
+#loginContainer p, #signupContainer p {
+    margin-top: 20px;
+    color: #2d6a4f;
+}
+
+#signupForm label {
+    display: block;
+    margin-bottom: 4px;
+    font-weight: bold;
+    color: #2d6a4f;
+    margin-right:70%;
+}
+
+#signupForm input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 2px solid #2d6a4f;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+#signupForm button {
+    width: 100%;
+    padding: 10px;
+    background-color: #38a169;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#signupForm button:hover {
+    background-color: #2d6a4f;
+}
+#feedback {
+    background: #2d6a4f;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+#feedbackForm {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+#feedbackForm label{
+    margin-right:80%;
+    font-size: larger;
+}
+
+#feedbackForm input, #feedbackForm textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#feedbackResponse {
+    margin-top: 20px;
+    color: #2d6a4f;
+}
+/* Modal for Map */
+#carbon-challenges {
+    background-color: #e8f5e9;
+    padding: 30px;
+    margin-top: 20px;
+}
+
+.challenge {
+    background-color: #f1f8e9;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border-left: 5px solid #43a047;
+}
+
+.challenge h3 {
+    margin-top: 0;
+}
+
+.challenge button {
+    background-color: #43a047;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.challenge button:hover {
+    background-color: #388e3c;
+}
+
+/* Styles for About and Carbon Emissions Sections */
+.about-content {
+    display: flex;
+    flex-direction: row;
+    align-items: left;
+    gap: 10px;
+    font-size: medium;
+    padding: 10px;
+    margin: 10px;
+}
+
+.article-content {
+    display: flex;
+    flex-direction: row;
+    align-items: left;
+    gap: 10px;
+    font-size: medium;
+}
+
+.about-image {
+    width: 20%;
+    max-width: 500px;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s;
+    
+    margin: 30px;
+}
+.ab{
+    margin-top: 50px;
+    padding: 10px;
+}
+
+.article-image {
+    width: 20%;
+    max-width: 500px;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s;
+}
+
+.about-image:hover, .article-image:hover {
+    transform: scale(1.05);
+}
+
+
+/* Modal Background */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #ffffff;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 400px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+.modal-content h2 {
+    color: #38a169;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #000;
+}
+
+#carbon-challenges p {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+#rewardMessage {
+    margin-top: 15px;
+    font-weight: bold;
+    color: #4CAF50; /* Green color for rewards */
+}
+
+/* Enhancements for Carbon Reduction Challenges */
+#carbon-challenges {
+    background-color: #e0f7fa;
+    padding: 30px;
+    margin: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    animation: fadeInSlide 1s ease-in-out;
+}
+
+.challenge {
+    background-color: #f1f8e9;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    border-left: 5px solid #43a047;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
+
+.challenge:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.challenge h3 {
+    color: #2e7d32;
+    font-size: 1.5em;
+    margin-top: 0;
+}
+
+.challenge p {
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.challenge button {
+    background-color: #66bb6a;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.challenge button:hover {
+    background-color: #388e3c;
+    transform: scale(1.05);
+}
+
+#rewardMessage {
+    margin-top: 15px;
+    font-weight: bold;
+    color: #4CAF50;
+    font-size: 1.2em;
+}
+
+.choice-button {
+    background-color: #4db6ac;
+    color: white;
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.choice-button:hover {
+    background-color: #00897b;
+    transform: scale(1.05);
+}
+
+
+.solution {
+    position: relative;
+    border: 1px solid #ccc;
+    margin: 20px auto; /* This centers the element horizontally */
+    width: 1000px; /* Adjust the width as needed */
+    padding: 15px;
+    background: #ffffff;
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
+    color: black;
+}
+
+
+.solution:hover {
+    transform: scale(1.05) translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+ul {
+    list-style-type: none;
+    padding: 0; /* Optional: to remove default padding */
+    margin: 0; /* Optional: to remove default margin */
+}
+
+.steps {
+    display: none;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.solution:hover .steps {
+    display: block;
+}
+
+#carbonCalculator {
+    margin: 40px auto;
+    max-width: 600px;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 128, 0, 0.1);
+    text-align: center;
+}
+
+#carbonCalculator h2 {
+    color: #2d6a4f;
+    margin-bottom: 20px;
+}
+
+#emissionForm label, #emissionForm select, #emissionForm input {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    padding: 8px;
+    font-size: 16px;
+}
+
+#emissionForm button {
+    margin-top: 20px;
+}
+
+#emissionResult {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #2d6a4f;
+}
+
+.choice-button {
+    background-color: #62a138;
+    color: white;
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.choice-button:hover {
+    background-color: #2d6a4f;
+    transform: scale(1.05);
+}
+
+#carbon-emission-india {
+    background: linear-gradient(135deg, #4CAF50, #81C784);
+    padding: 40px 20px;
+    margin: 20px 0;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    color: #fff;
+    animation: fadeIn 1.2s ease-in-out;
+    text-align: center;
+}
+
+#carbon-emission-india h2 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.article-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.article-image {
+    width: 300px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+}
+
+.article-image:hover {
+    transform: scale(1.05);
+}
+
+.text-content {
+    max-width: 600px;
+    text-align: justify;
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+#partners-logos {
+    background-color: #f0fdf4;
+    padding: 40px 20px;
+    margin: 20px 0;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+#partners-logos h2 {
+    font-size: 1.8em;
+    color: #2e7d32;
+    margin-bottom: 20px;
+}
+
+.carousel-wrapper {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 100px; /* Adjust height as needed */
+}
+
+.carousel-track {
+    display: flex;
+    gap: 80px; /* Space between logos */
+    animation: scrollLeft 30s linear infinite; /* Speed adjusted for smoothness */
+}
+
+.carousel-track img {
+    width: 80px; /* Adjust as needed */
+    opacity: 0.8;
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+/* Hover effect for logos with slight bounce */
+.carousel-track img:hover {
+    transform: scale(1.2) translateY(-5px);
+    opacity: 1;
+}
+
+/* Keyframes for scrolling logos */
+@keyframes scrollLeft {
+    0% {
+        transform: translateX(100%); /* Start logos on the right */
+    }
+    100% {
+        transform: translateX(-100%); /* Move logos to the left end */
+    }
+}
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #0db78f, #007B5F);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+header h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.2rem;
+    color: #f4f4f4;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+button {
+    padding: 15px 30px;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.3s;
+}
+
+button:hover {
+    transform: scale(1.05);
+    background-color: #FFC107;
+    color: #333;
+}
+
+button:nth-child(1) {
+    background-color: #4CAF50; /* Green */
+    color: #fff;
+}
+
+button:nth-child(2) {
+    background-color: #FF5722; /* Orange */
+    color: #fff;
+}
+
+button:nth-child(3) {
+    background-color: #2196F3; /* Blue */
+    color: #fff;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.2);
+}

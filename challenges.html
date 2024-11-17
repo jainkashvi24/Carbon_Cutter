@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carbon Reduction Challenges</title>
+    <link rel="stylesheet" href="index1.css">
+</head>
+<body>
+    <section id="carbon-challenges">
+        <h2>Carbon Reduction Challenges</h2>
+        <p>Score: <span id="score">0</span></p> <!-- Display the score here -->
+        <div id="rewardMessage"></div> <!-- Display rewards here -->
+        <br>
+        <div class="challenge">
+            <h3>Challenge 1: Walk or Bike Instead of Driving</h3>
+            <p>Try to walk or bike at least twice a week to reduce your transport emissions.</p>
+            <button onclick="completeChallenge(1)">Complete Challenge</button>
+        </div>
+        <div class="challenge">
+            <h3>Challenge 2: Reduce Meat Consumption</h3>
+            <p>Replace one meat-based meal per week with a plant-based alternative.</p>
+            <button onclick="completeChallenge(2)">Complete Challenge</button>
+        </div>
+        <div class="challenge">
+            <h3>Challenge 3: Unplug Devices</h3>
+            <p>Unplug devices when not in use to reduce standby power consumption.</p>
+            <button onclick="completeChallenge(3)">Complete Challenge</button>
+        </div>
+        <button onclick="goTocalculator()" class="choice-button">Go to Calculator</button>
+        <button onclick="goToemission()" class="choice-button">Go to Carbon emission</button>
+        <button onclick="goTomain()" class="choice-button">Go to Main page</button>
+    </section>  
+    <script>
+        function completeChallenge(challengeId) {
+    const messages = [
+        "Great job! Keep reducing your transport emissions!",
+        "Nice work! Reducing meat consumption helps lower your footprint.",
+        "Awesome! You're saving energy by unplugging unused devices."
+    ];
+    
+    document.getElementById("challengeMessage").innerHTML = messages[challengeId - 1];
+}
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+function completeChallenge(challengeId) {
+    const messages = [
+        "Great job! Keep reducing your transport emissions!",
+        "Nice work! Reducing meat consumption helps lower your footprint.",
+        "Awesome! You're saving energy by unplugging unused devices."
+    ];
+
+    // Set the challenge completion message
+    document.getElementById("challengeMessage").innerText = messages[challengeId - 1];
+
+    // Show the modal
+    document.getElementById("completionModal").style.display = "block";
+}
+
+function closeModal() {
+    // Hide the modal
+    document.getElementById("completionModal").style.display = "none";
+}
+
+// Optional: Close modal when clicking outside of it
+window.onclick = function(event) {
+    const modal = document.getElementById("completionModal");
+    if (event.target === modal) {
+        modal.style.display = "none";
+    }
+}
+
+let score = 0;
+const rewardMessage = document.getElementById('rewardMessage');
+const scoreElement = document.getElementById('score');
+
+// Function to complete a challenge
+function completeChallenge(challengeNumber) {
+    let points = 0;
+    let message = '';
+
+    switch (challengeNumber) {
+        case 1:
+            points = 10; // Award 10 points for Challenge 1
+            message = "Great job! You've completed the challenge to walk or bike more!";
+            break;
+        case 2:
+            points = 15; // Award 15 points for Challenge 2
+            message = "Fantastic! You've reduced your meat consumption for a healthier planet!";
+            break;
+        case 3:
+            points = 5; // Award 5 points for Challenge 3
+            message = "Well done! You've reduced your power consumption!";
+            break;
+        default:
+            message = "Unknown challenge.";
+    }
+
+    // Update the score
+    score += points;
+    scoreElement.textContent = score;
+
+    // Show the message in the modal or alert
+    alert(message); // or use modal if desired
+    checkRewards();
+}
+
+// Function to check for rewards based on score
+function checkRewards() {
+    if (score >= 30 && score < 50) {
+        rewardMessage.textContent = "Reward: You’ve earned a Bronze Badge!";
+    } else if (score >= 50 && score < 70) {
+        rewardMessage.textContent = "Reward: You’ve earned a Silver Badge!";
+    } else if (score >= 70) {
+        rewardMessage.textContent = "Reward: You’ve earned a Gold Badge! Keep going!";
+    } else {
+        rewardMessage.textContent = ''; // Clear reward message if not eligible
+    }
+}
+    </script>
+</body>
+</html>

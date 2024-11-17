@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carbon Footprint Calculator</title>
+    <link rel="stylesheet" href="index1.css">
+</head>
+<body>
+    <section id="carbonCalculator">
+        <h2>Calculate Your CO₂ Emissions</h2>
+        <form id="emissionForm">
+            <label for="activity">Select Activity:</label>
+            <select id="activity">
+                <option value="transport">Transport (km per week)</option>
+                <option value="electricity">Electricity (kWh per month)</option>
+                <option value="gas">Natural Gas (cubic meters per month)</option>
+                <option value="meat">Meat Consumption (kg per week)</option>
+                <option value="waste">Household Waste (kg per week)</option>
+                <option value="water">Water Usage (liters per day)</option>
+                <option value="airTravel">Air Travel (hours per year)</option>
+            </select>
+    
+            <label for="amount">Amount:</label>
+            <input type="number" id="amount" name="amount" required>
+    
+            <button type="button" onclick="emission()">Calculate CO₂ Emission</button>
+        <div id="emissionResult" class="result"></div>
+            <button onclick="goTocalculator()" class="choice-button">Go to Calculator</button>
+            <button onclick="goTomain()" class="choice-button">Go to Main page</button>
+        </form>
+    </section>
+     
+
+    <script src="script.js"></script>
+</body>
+</html>
